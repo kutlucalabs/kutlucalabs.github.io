@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutluca Labs | Official Studio Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07040e;
+            --bg-card: rgba(18, 12, 34, 0.78);
+            --bg-card-hover: rgba(28, 18, 52, 0.94);
+            --border-purple: rgba(139, 92, 246, 0.22);
+            --border-purple-hover: rgba(168, 85, 247, 0.7);
+            --accent-purple: #8b5cf6;
+            --accent-purple-glow: rgba(139, 92, 246, 0.5);
+            --hero-gradient: linear-gradient(135deg, #6d28d9 0%, #4c1d95 50%, #2e1065 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+        }
+
+        header {
+            width: 100%;
+            max-width: 1140px;
+            padding: 35px 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-title-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 6px;
+        }
+
+        .header-logo-img {
+            width: 62px;
+            height: 62px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+        }
+
+        .studio-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 60%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .studio-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+            width: 94%;
+            max-width: 1140px;
+            padding: 10px 0 60px;
+            position: relative;
+        }
+
+        .bento-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 26px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bento-card:hover {
+            border-color: var(--border-purple-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px -10px rgba(139, 92, 246, 0.35);
+        }
+
+        /* LEFT COLUMN LAYOUT */
+        .card-inkedapp { grid-column: span 12; min-height: 250px; }
+        .card-glyphix { grid-column: span 12; min-height: 200px; }
+        
+        .card-contact, .card-legal {
+            grid-column: span 12;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 22px;
+            cursor: default;
+        }
+
+        .email-list, .legal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 100%;
+            justify-content: space-evenly;
+            margin-top: 10px;
+        }
+
+        .email-item-btn, .legal-item-btn {
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #d8b4fe;
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+            width: 100%;
+            text-decoration: none;
+        }
+        .email-item-btn:hover, .legal-item-btn:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            transform: scale(1.02);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        /* CENTER COLUMN LAYOUT */
+        .card-builder {
+            grid-column: span 12;
+            min-height: 310px;
+            position: relative;
+            border: 1px solid rgba(192, 132, 252, 0.45);
+            background: var(--hero-gradient);
+        }
+
+        .card-builder-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+        .card-builder:hover .card-builder-bg { opacity: 0.65; }
+
+        .card-builder-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* PERFECT FLOATING ORB CONTAINER */
+        .orb-centered-wrapper {
+            grid-column: span 12;
+            position: relative;
+            height: 180px;
+            pointer-events: none;
+            z-index: 25;
+        }
+
+        .pure-glowing-orb {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 0 45px rgba(168, 85, 247, 0.95)) drop-shadow(0 0 80px rgba(236, 72, 153, 0.8));
+            transition: all 0.35s ease;
+        }
+
+        /* CENTER BOTTOM CONTAINER (12K & PANMAZE) */
+        .center-bottom-bento-wrapper {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .card-12k { min-height: 200px; justify-content: center; }
+        .card-panmaze { min-height: 200px; }
+
+        /* RIGHT COLUMN LAYOUT */
+        .card-widget { grid-column: span 12; min-height: 85px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
+        .card-magneblock { grid-column: span 12; min-height: 165px; }
+        .card-huepanic { grid-column: span 12; min-height: 200px; }
+
+        /* MOBILE RESPONSIVE OPTIMIZATION (< 600px) */
+        @media (max-width: 600px) {
+            header { padding: 20px 15px 10px; }
+            .studio-title { font-size: 2.1rem; }
+            .header-logo-img { width: 48px; height: 48px; }
+            .bento-card { padding: 18px; border-radius: 20px; }
+            .pure-glowing-orb { width: 190px; height: 190px; }
+            .orb-centered-wrapper { height: 130px; }
+            .center-bottom-bento-wrapper { grid-template-columns: 1fr; }
+            .modal-content { padding: 22px 16px; border-radius: 22px; }
+            .modal-shot-img { max-height: 180px; }
+        }
+
+        /* PERFECT 3-COLUMN BENTO GRID WITH SWAPPED CARDS (DESKTOP >= 900px) */
+        @media (min-width: 900px) {
+            .bento-grid {
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: auto;
+            }
+
+            .card-inkedapp { grid-column: 1 / span 3; grid-row: 1 / span 2; min-height: 330px; }
+            .card-glyphix { grid-column: 1 / span 3; grid-row: 3; min-height: 200px; }
+            .card-contact { grid-column: 1 / span 3; grid-row: 4; min-height: 200px; }
+
+            .card-builder { grid-column: 4 / span 6; grid-row: 1 / span 2; min-height: 330px; }
+            .orb-centered-wrapper { grid-column: 4 / span 6; grid-row: 3; height: 180px; }
+            .center-bottom-bento-wrapper { grid-column: 4 / span 6; grid-row: 4; }
+
+            .card-widget { grid-column: 10 / span 3; grid-row: 1; min-height: 85px; }
+            .card-magneblock { grid-column: 10 / span 3; grid-row: 2; min-height: 165px; }
+            .card-huepanic { grid-column: 10 / span 3; grid-row: 3; min-height: 200px; }
+            .card-legal { grid-column: 10 / span 3; grid-row: 4; min-height: 200px; }
+        }
+
+        .brand-icon-head {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title-lg { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+        .card-title-md { font-family: 'Orbitron', sans-serif; font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+        .card-desc { font-size: 0.82rem; color: var(--text-sub); line-height: 1.5; }
+
+        .pill-tag {
+            display: inline-block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+            padding: 4px 12px; border-radius: 20px; background: rgba(139, 92, 246, 0.15); color: #d8b4fe;
+            border: 1px solid rgba(139, 92, 246, 0.3); margin-top: 8px; width: fit-content;
+        }
+
+        .stat-big { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 900; color: #ffedd5; line-height: 1; }
+        .stat-label { font-size: 0.78rem; color: #fdba74; font-weight: 600; margin-top: 4px; }
+        .avatar-group { display: flex; align-items: center; margin-top: 10px; }
+        .avatar {
+            width: 28px; height: 28px; border-radius: 50%; border: 2px solid #0d081e;
+            background: #4c1d95; display: flex; align-items: center; justify-content: center;
+            font-size: 0.7rem; color: #fff; margin-left: -8px;
+        }
+        .avatar:first-child { margin-left: 0; }
+
+        .card-store-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .store-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 8px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            flex: 1;
+            min-width: 85px;
+            text-align: center;
+        }
+        .store-icon-link.google { background: rgba(139, 92, 246, 0.22); color: #d8b4fe; border: 1px solid rgba(139, 92, 246, 0.45); }
+        .store-icon-link.google:hover { background: var(--accent-purple); color: #fff; transform: translateY(-2px); }
+        .store-icon-link.apple { background: rgba(168, 85, 247, 0.22); color: #e9d5ff; border: 1px solid rgba(168, 85, 247, 0.45); }
+        .store-icon-link.apple:hover { background: #a855f7; color: #fff; transform: translateY(-2px); }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(4, 2, 10, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            display: flex; align-items: center; justify-content: center; z-index: 9999;
+            opacity: 0; pointer-events: none; transition: all 0.3s ease; padding: 20px;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+
+        .modal-content {
+            background: #0d081e; border: 1px solid var(--border-purple-hover);
+            border-radius: 28px; width: 100%; max-width: 860px; max-height: 90vh;
+            overflow-y: auto; position: relative; padding: 30px;
+            box-shadow: 0 25px 60px -15px rgba(139, 92, 246, 0.45);
+            transform: scale(0.92) translateY(20px); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); }
+
+        .modal-close {
+            position: absolute; top: 20px; right: 20px; width: 38px; height: 38px; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; transition: 0.2s; font-size: 1.1rem; z-index: 10;
+        }
+        .modal-close:hover { background: var(--accent-purple); transform: rotate(90deg); }
+
+        /* ALL SCREENSHOTS VISIBLE AT ONCE IN EQUAL GRID COLUMNS (ZERO SCROLLING NEEDED!) */
+        .modal-screenshots-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 24px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .modal-shot-img {
+            width: 100%;
+            height: auto;
+            max-height: 220px;
+            object-fit: contain;
+            border-radius: 14px;
+            background: rgba(14, 9, 28, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            font-size: 0.8rem; font-weight: 700; padding: 12px 18px; border-radius: 12px;
+            text-decoration: none; transition: all 0.25s ease; cursor: pointer; border: none; flex: 1; min-width: 120px;
+        }
+        .btn-primary { background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: #fff; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); }
+        .btn-primary:hover { background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); transform: translateY(-2px); }
+        .btn-steam { background: linear-gradient(135deg, #171a21 0%, #2a475e 100%); color: #c6d4df; border: 1px solid #66c0f4; }
+        .btn-steam:hover { background: #66c0f4; color: #1b2838; transform: translateY(-2px); }
+        .btn-disabled { background: rgba(255, 255, 255, 0.03); color: #64748b; border: 1px solid rgba(255, 255, 255, 0.06); cursor: default; }
+
+        footer {
+            margin-top: auto; padding: 30px 20px; color: var(--text-muted);
+            font-size: 0.78rem; text-align: center; width: 100%;
+            border-top: 1px solid var(--border-purple); background: rgba(5, 3, 10, 0.8);
+        }
+        footer a { color: #c084fc; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER WITH kutluca_icon_clean.jpg LOGO -->
+    <header>
+        <div class="header-title-row">
+            <img src="images/kutluca_icon_clean.jpg" class="header-logo-img" alt="Kutluca Labs Logo" onerror="this.src='images/kutlucalabs_3.png'">
+            <h1 class="studio-title">KUTLUCA LABS</h1>
+        </div>
+        <div class="studio-sub">Scientific Research & Game Development Studio</div>
+    </header>
+
+    <div class="bento-grid">
+
+        <!-- 1. SOL ÜST: INKEDAPP -->
+        <div class="bento-card card-inkedapp" onclick="openModal('inkedapp')">
+            <div>
+                <img src="images/InkedApp.jpg" class="brand-icon-head" alt="InkedApp" onerror="this.onerror=null; this.src='images/InkedApp.png';">
+                <div class="card-title-lg">InkedApp</div>
+                <div class="card-desc">Next-generation social interaction platform designed for meaningful human connections, expressive digital profile personalization, and real-time interactive sharing.</div>
+            </div>
+            <div class="pill-tag">Launching Soon</div>
+        </div>
+
+        <!-- 2. SOL ORTA: GLYPHIX (SWAPPED WITH 12K) -->
+        <div class="bento-card card-glyphix" onclick="openModal('glyphix')">
+            <div>
+                <img src="images/glyphix.png" class="brand-icon-head" alt="GLYPHIX">
+                <div class="card-title-md">GLYPHIX</div>
+                <div class="card-desc">Dynamic logic puzzle experience combining speed and symbol mechanics.</div>
+            </div>
+            <div class="card-store-links" onclick="event.stopPropagation()">
+                <a href="https://play.google.com/store/apps/details?id=com.kutluca.glyphix" target="_blank" class="store-icon-link google">
+                    <i class="fab fa-google-play"></i> Play Store
+                </a>
+                <a href="https://apps.apple.com/tr/app/glyphix/id6757542642?l=tr" class="store-icon-link apple" target="_blank">
+                    <i class="fab fa-apple"></i> App Store
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. SOL ALT: İLETİŞİM KUTUSU -->
+        <div class="bento-card card-contact">
+            <div style="font-size: 0.75rem; color: #c084fc; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                <i class="fas fa-envelope"></i> Studio Contact & Support
+            </div>
+            <div class="email-list">
+                <button class="email-item-btn" onclick="copySpecificEmail('kutlucalabs@icloud.com', this)">
+                    <span>kutlucalabs@icloud.com</span> <i class="fas fa-copy"></i>
+                </button>
+                <button class="email-item-btn" onclick="copySpecificEmail('kutluca.game@gmail.com', this)">
+                    <span>kutluca.game@gmail.com</span> <i class="fas fa-copy"></i>
+                </button>
+                <button class="email-item-btn" onclick="copySpecificEmail('kutlucaa13@gmail.com', this)">
+                    <span>kutlucaa13@gmail.com</span> <i class="fas fa-copy"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 4. ORTA ÜST: BUILDER HERO CARD -->
+        <div class="bento-card card-builder" onclick="openModal('building')">
+            <img src="images/builder_back.png" class="card-builder-bg" alt="Builder Background" onerror="this.style.display='none'">
+            <div class="card-builder-content">
+                <div>
+                    <div style="font-size: 1.8rem; color: #f472b6; margin-bottom: 12px;"><i class="fas fa-city"></i></div>
+                    <div class="card-title-lg" style="font-size: 2.2rem;">Building (Builder)</div>
+                    <div class="card-desc" style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6;">
+                        Our flagship next-gen construction and architectural management simulation game. Manage structural physics, engineering, and infrastructure.
+                    </div>
+                </div>
+                <div class="pill-tag" style="background: rgba(255, 255, 255, 0.2); color: #fff; border-color: rgba(255, 255, 255, 0.4);">
+                    <i class="fab fa-steam"></i> Steam Next Fest: Feb 2027 • Launch: May 2027
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. ORTA GÖBEK: TAM DİKEY ORTAYA HİZALANMIŞ BÜYÜK FLOATING KÜRE (250px / MOBILDE 190px) -->
+        <div class="orb-centered-wrapper">
+            <img src="images/sphere.png" class="pure-glowing-orb" alt="Glowing Sphere" onerror="this.onerror=null; this.src='images/kure.png';">
+        </div>
+
+        <!-- 6 & 7. UNIFIED CENTER BOTTOM BENTO: 12K & PANMAZE -->
+        <div class="center-bottom-bento-wrapper">
+            <div class="bento-card card-12k">
+                <div class="stat-big">12K</div>
+                <div class="stat-label">happy users / players</div>
+                <div class="avatar-group">
+                    <div class="avatar">👨‍💻</div>
+                    <div class="avatar">🎮</div>
+                    <div class="avatar">👩‍🔬</div>
+                </div>
+            </div>
+
+            <div class="bento-card card-panmaze" onclick="openModal('panmaze')">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                        <img src="images/PanMaze.png" class="brand-icon-head" style="margin-bottom:0;" alt="PanMaze Panda" onerror="this.onerror=null; this.src='images/panmaze.png';">
+                        <div>
+                            <div class="card-title-md" style="margin-bottom: 0;">PanMaze</div>
+                            <div class="stat-label" style="color: #e9d5ff;">Spatial Labyrinth Puzzle</div>
+                        </div>
+                    </div>
+                    <div class="card-desc">Navigate multidimensional spatial mazes with dynamic shifting pathways and interactive puzzle mechanics.</div>
+                </div>
+                <div class="pill-tag">In Active Dev</div>
+            </div>
+        </div>
+
+        <!-- 8. SAĞ ÜST KUTU: SCIENTIFIC PUBLICATIONS (SCHOLAR PROFILE) -->
+        <div class="bento-card card-widget" onclick="window.open('https://scholar.google.com/citations?user=SU9M_a4AAAAJ&hl=tr', '_blank')" style="border-color: rgba(168, 85, 247, 0.45); background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(20, 14, 36, 0.8));">
+            <div style="display: flex; align-items: center; gap: 12px; width: 100%;">
+                <div style="width: 42px; height: 42px; border-radius: 12px; background: rgba(139, 92, 246, 0.3); display: flex; align-items: center; justify-content: center; color: #e9d5ff; font-size: 1.2rem; flex-shrink: 0; border: 1px solid var(--accent-purple);">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div style="flex: 1;">
+                    <div class="card-title-md" style="font-size: 0.9rem; margin-bottom: 2px;">Scholar Profile</div>
+                    <div class="card-desc" style="font-size: 0.72rem; color: #c084fc; font-weight: 700;">Scientific Publications <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.65rem; margin-left: 2px;"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. SAĞ ORTA: MAGNEBLOCK (SWAPPED WITH PANMAZE) -->
+        <div class="bento-card card-magneblock" onclick="openModal('magneblock')">
+            <div>
+                <img src="images/MagneBlock.png" class="brand-icon-head" alt="MagneBlock">
+                <div class="card-title-md">MagneBlock</div>
+                <div class="card-desc">Solve physics-based puzzles using magnetic forces and pole attraction.</div>
+            </div>
+            <div class="card-store-links" onclick="event.stopPropagation()">
+                <a href="https://play.google.com/store/apps/details?id=com.kutluca.magneblock" target="_blank" class="store-icon-link google">
+                    <i class="fab fa-google-play"></i> Play Store
+                </a>
+                <a href="https://apps.apple.com/tr/app/magneblock/id6792125847?l=tr" target="_blank" class="store-icon-link apple">
+                    <i class="fab fa-apple"></i> App Store
+                </a>
+            </div>
+        </div>
+
+        <!-- 10. SAĞ ALT 1: HUEPANIC -->
+        <div class="bento-card card-huepanic" onclick="openModal('huepanic')">
+            <div>
+                <img src="images/HuePanic.png" class="brand-icon-head" alt="HuePanic">
+                <div class="card-title-md">HuePanic</div>
+                <div class="card-desc">Test your reflexes in a fast-paced world of color chaos and precise matching.</div>
+            </div>
+            <div class="card-store-links" style="margin-top: 10px;" onclick="event.stopPropagation()">
+                <a href="https://play.google.com/store/apps/details?id=com.kutluca.huepanic" target="_blank" class="store-icon-link google">
+                    <i class="fab fa-google-play"></i> Play Store
+                </a>
+                <a href="https://apps.apple.com/tr/app/huepanic/id6792123242?l=tr" target="_blank" class="store-icon-link apple">
+                    <i class="fab fa-apple"></i> App Store
+                </a>
+            </div>
+        </div>
+
+        <!-- 11. SAĞ EN ALT: YASAL POLITIKALAR KUTUSU -->
+        <div class="bento-card card-legal">
+            <div style="font-size: 0.75rem; color: #c084fc; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">
+                <i class="fas fa-shield-halved"></i> Legal & Governance
+            </div>
+            <div class="legal-list">
+                <button class="legal-item-btn" onclick="event.stopPropagation(); window.location.href='privacy.html';">
+                    <span>Privacy Policy</span> <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                </button>
+                <button class="legal-item-btn" onclick="event.stopPropagation(); window.location.href='terms.html';">
+                    <span>Terms & EULA</span> <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                </button>
+                <button class="legal-item-btn" onclick="event.stopPropagation(); window.location.href='delete-data.html';" style="color: #f87171; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08);">
+                    <span>Delete Account & Data</span> <i class="fas fa-trash-can" style="font-size: 0.75rem;"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL POPUP -->
+    <div class="modal-overlay" id="projectModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-xmark"></i></button>
+
+            <div class="modal-screenshots-grid" id="modalShotsContainer"></div>
+            
+            <div class="pill-tag" id="modalCategory" style="margin-bottom: 8px;">Category</div>
+            <h2 class="card-title-lg" id="modalTitle" style="font-size: 1.8rem; margin-bottom: 6px;">Project Title</h2>
+            <div style="font-size: 0.8rem; color: #c084fc; font-weight: 700; margin-bottom: 14px;" id="modalBadge">Status</div>
+
+            <p class="card-desc" id="modalDesc" style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Full project description will appear here.</p>
+
+            <div class="btn-group" id="modalBtnGroup"></div>
+        </div>
+    </div>
+
+    <footer> 
+        <p>© 2026 Abdullah Kutluca | Kutluca Labs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const projectsData = {
+            "building": {
+                title: "Building (Builder)",
+                category: "PC & Console • Simulation",
+                badge: "Steam Next Fest: Feb 2027 | Full Launch: May 2027",
+                cardDesc: "Our flagship next-gen construction and architectural management simulation game. Manage structural physics, engineering, and infrastructure.",
+                modalDesc: "Building is an ambitious construction and architecture simulation game. Engineer complex structural physics, manage material supply chains, design futuristic skylines, and lead city-scale infrastructure projects.",
+                screenshots: ["images/builder_1.png", "images/builder_2.png", "images/builder_3.png"],
+                links: [
+                    { label: "Steam Wishlist", url: "#", class: "btn-steam", icon: "fab fa-steam" }
+                ]
+            },
+            "inkedapp": {
+                title: "InkedApp",
+                category: "Social Interaction",
+                badge: "Launching Next Week",
+                cardDesc: "Next-generation social interaction platform designed for meaningful human connections, expressive digital profile personalization, and real-time interactive sharing.",
+                modalDesc: "InkedApp redefines digital social spaces by emphasizing genuine human connections, expressive profile personalization, dynamic community spaces, and real-time interactive sharing.",
+                screenshots: ["images/inkedapp_1.png", "images/inkedapp_2.png", "images/inkedapp_3.png"],
+                links: [
+                    { label: "Google Play (Approved)", url: "#", class: "btn-primary", icon: "fab fa-google-play" },
+                    { label: "App Store (Soon)", url: "#", class: "btn-disabled", icon: "fab fa-apple" }
+                ]
+            },
+            "glyphix": {
+                title: "GLYPHIX",
+                category: "Puzzle & Logic Game",
+                badge: "Available Now on Mobile",
+                cardDesc: "Dynamic logic puzzle experience combining speed and symbol mechanics.",
+                modalDesc: "GLYPHIX challenges your mind with intricate symbol puzzles, rapid spatial awareness, fast-paced game modes, and progressive cognitive scaling.",
+                screenshots: ["images/glyphix_1.png", "images/glyphix_2.png"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.kutluca.glyphix", class: "btn-primary", icon: "fab fa-google-play" },
+                    { label: "App Store", url: "https://apps.apple.com/tr/app/glyphix/id6757542642?l=tr", class: "btn-primary", icon: "fab fa-apple" }
+                ]
+            },
+            "huepanic": {
+                title: "HuePanic",
+                category: "Arcade & Reflex Game",
+                badge: "Available Now on Mobile",
+                cardDesc: "Test your reflexes in a fast-paced world of color chaos and precise matching.",
+                modalDesc: "HuePanic is an intense reflex-based arcade puzzle game where precision, fast color matching, color spectrum precision, and rapid decision-making are key to survival.",
+                screenshots: ["images/huepanic_1.png", "images/huepanic_2.png"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.kutluca.huepanic", class: "btn-primary", icon: "fab fa-google-play" },
+                    { label: "App Store", url: "https://apps.apple.com/tr/app/huepanic/id6792123242?l=tr", class: "btn-primary", icon: "fab fa-apple" }
+                ]
+            },
+            "magneblock": {
+                title: "MagneBlock",
+                category: "Physics Puzzle Game",
+                badge: "Available Now on Mobile",
+                cardDesc: "Solve physics-based puzzles using magnetic forces and pole attraction.",
+                modalDesc: "MagneBlock combines magnetic physics with strategic block manipulation. Manipulate North and South magnetic polar forces, attraction pathways, and spatial block mechanics to solve mind-bending levels.",
+                screenshots: ["images/magneblock_1.png", "images/magneblock_2.png"],
+                links: [
+                    { label: "Google Play", url: "https://play.google.com/store/apps/details?id=com.kutluca.magneblock", class: "btn-primary", icon: "fab fa-google-play" },
+                    { label: "App Store", url: "https://apps.apple.com/tr/app/magneblock/id6792125847?l=tr", class: "btn-primary", icon: "fab fa-apple" }
+                ]
+            },
+            "panmaze": {
+                title: "PanMaze",
+                category: "Spatial Puzzle",
+                badge: "In Active Development",
+                cardDesc: "Navigate multidimensional spatial mazes with dynamic shifting pathways and interactive puzzle mechanics.",
+                modalDesc: "PanMaze takes maze solving into spatial dimensions with dynamic labyrinth shifting, multi-dimensional realms, time trial challenges, and mind-bending pathways.",
+                screenshots: ["images/panmaze_1.png", "images/panmaze_2.png"],
+                links: [
+                    { label: "Coming Soon", url: "#", class: "btn-disabled", icon: "fas fa-clock" }
+                ]
+            }
+        };
+
+        function createFallbackOrb() {
+            const orb = document.createElement('div');
+            orb.className = 'pure-glowing-orb';
+            return orb;
+        }
+
+        let currentActiveProject = null;
+
+        function openModal(projectId) {
+            const data = projectsData[projectId];
+            if (!data) return;
+
+            currentActiveProject = data;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalCategory').innerText = data.category;
+            document.getElementById('modalBadge').innerText = data.badge;
+            document.getElementById('modalDesc').innerText = data.modalDesc;
+
+            const shotsContainer = document.getElementById('modalShotsContainer');
+            shotsContainer.innerHTML = '';
+            
+            if (data.screenshots && data.screenshots.length > 0) {
+                shotsContainer.style.gridTemplateColumns = `repeat(${data.screenshots.length}, 1fr)`;
+                
+                data.screenshots.forEach((shotSrc, idx) => {
+                    const img = document.createElement('img');
+                    img.src = shotSrc;
+                    img.className = 'modal-shot-img';
+                    img.alt = `${data.title} Screenshot ${idx + 1}`;
+                    img.onerror = function() {
+                        this.style.display = 'none';
+                    };
+                    shotsContainer.appendChild(img);
+                });
+            }
+
+            const btnGroup = document.getElementById('modalBtnGroup');
+            btnGroup.innerHTML = '';
+            data.links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.className = `btn ${link.class}`;
+                if (link.url !== '#') a.target = '_blank';
+                a.innerHTML = `<i class="${link.icon}"></i> ${link.label}`;
+                btnGroup.appendChild(a);
+            });
+
+            document.getElementById('projectModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOverlay(e) {
+            if (e.target.id === 'projectModal') closeModal();
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function copySpecificEmail(emailAddress, btnElem) {
+            navigator.clipboard.writeText(emailAddress).then(() => {
+                const spanElem = btnElem.querySelector('span');
+                const originalText = spanElem.innerText;
+                spanElem.innerText = emailAddress + " (Copied!) ✓";
+                btnElem.style.background = "linear-gradient(135deg, #22c55e, #15803d)";
+                btnElem.style.color = "#fff";
+                setTimeout(() => {
+                    spanElem.innerText = originalText;
+                    btnElem.style.background = "";
+                    btnElem.style.color = "";
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

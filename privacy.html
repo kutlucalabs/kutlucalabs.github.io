@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutluca Labs | Privacy Policy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07040e;
+            --bg-card: rgba(18, 12, 34, 0.85);
+            --border-purple: rgba(139, 92, 246, 0.3);
+            --border-purple-hover: rgba(168, 85, 247, 0.7);
+            --accent-purple: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px 60px;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+        }
+
+        header {
+            width: 100%;
+            max-width: 860px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 15px;
+        }
+
+        .header-logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .studio-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 60%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.18);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: #d8b4fe;
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            margin-bottom: 10px;
+        }
+        .back-btn:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #d8b4fe;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 8px; }
+
+        a {
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #e9d5ff;
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            font-size: 0.88rem;
+        }
+        .nav-links a {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-links a:hover { background: rgba(139, 92, 246, 0.25); text-decoration: none; }
+
+        .meta {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        th {
+            background-color: rgba(139, 92, 246, 0.22);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        td {
+            background-color: rgba(18, 12, 34, 0.5);
+            color: var(--text-sub);
+        }
+
+        .callout {
+            background-color: rgba(139, 92, 246, 0.14);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            color: #e9d5ff;
+        }
+
+        .footer-legal {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Main Studio Website
+        </a>
+        <div class="header-logo-row">
+            <img src="images/kutluca_icon_clean.jpg" class="header-logo-img" alt="Kutluca Labs Logo" onerror="this.src='images/kutlucalabs_3.png'">
+            <h1 class="studio-title">KUTLUCA LABS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        
+        <div class="nav-links">
+            <a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service &amp; EULA</a>
+            <a href="delete-data.html" style="color: #f87171;"><i class="fas fa-trash-can"></i> Delete Your Account &amp; Data</a>
+        </div>
+
+        <div class="meta">
+            <strong>Effective Date:</strong> August 2, 2026 &nbsp;·&nbsp; <strong>Last Updated:</strong> August 2, 2026
+        </div>
+
+        <p>This Privacy Policy explains how Kutluca Labs ("we", "us") collects, uses, and protects information when you use our mobile applications (collectively, "the Applications").</p>
+
+        <p>Our Applications fall into two groups, and they are treated very differently by this policy:</p>
+        <ul>
+            <li><strong>Games</strong> — HuePanic, GLYPHIX, MagneBlock and similar titles. No account, no login, no user profile.</li>
+            <li><strong>InkedApp</strong> — a pen-pal application. Requires an account and involves communication between users.</li>
+        </ul>
+
+        <h2>1. Data Controller</h2>
+        <p>The data controller responsible for your personal data is:</p>
+        <div class="callout" style="background: rgba(255,255,255,0.03); border-left-color: #c084fc;">
+            <strong>Kutluca Labs</strong><br>
+            [Abdullah Kutluca]<br>
+            [Pozanti, Adana, Türkiye]<br>
+            Email: <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a>
+        </div>
+
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Games (HuePanic, GLYPHIX, MagneBlock)</h3>
+        <p>We do not collect any Personally Identifiable Information in our games. There is no account, no login, and no profile. These games do not ask for permission to track you across other companies' apps and websites, and we do not do so. The only data processed is that described in Section 4 (advertising) and Section 5 (diagnostics).</p>
+
+        <h3>2.2 InkedApp</h3>
+        <p>To provide pen-pal matching and letter delivery, we collect the following:</p>
+        <table>
+            <tr><th>Category</th><th>What it includes</th><th>Why we need it</th></tr>
+            <tr>
+                <td>Account data</td>
+                <td>Email address, authentication credentials (handled by Google Firebase Authentication — we never see or store your password), account creation date</td>
+                <td>To create and secure your account</td>
+            </tr>
+            <tr>
+                <td>Profile data</td>
+                <td>Nickname, self-declared country, date of birth, selected interests</td>
+                <td>To show you to other users, to match pen pals, and to verify the minimum age</td>
+            </tr>
+            <tr>
+                <td>User content</td>
+                <td>Letters you send and receive, notice-board posts</td>
+                <td>To deliver your correspondence</td>
+            </tr>
+            <tr>
+                <td>Safety data</td>
+                <td>Users you have blocked; reports you submit, which include the reported user's identifier and a copy of the reported content</td>
+                <td>To enforce our community rules and to review reports</td>
+            </tr>
+            <tr>
+                <td>Purchase records</td>
+                <td>Virtual currency balance and completed in-app purchase transactions</td>
+                <td>To deliver purchased items and restore them on a new device</td>
+            </tr>
+        </table>
+
+        <p>Your email address and date of birth are stored separately from your public profile and are not visible to other users. Other users can see only your nickname, country, interests, and the content you choose to send or post.</p>
+
+        <h3>2.3 What we do not collect</h3>
+        <ul>
+            <li><strong>No photographs or images.</strong> InkedApp has no photo-sharing feature. We do not access your camera or photo library.</li>
+            <li><strong>No precise location.</strong> Country is a value you select yourself. We do not use GPS or device location services.</li>
+            <li><strong>No contacts, microphone, or calendar access.</strong></li>
+        </ul>
+
+        <h2>3. Legal Bases for Processing (EEA/UK users)</h2>
+        <p>Where the GDPR or UK GDPR applies, we rely on the following legal bases:</p>
+        <ul>
+            <li><strong>Performance of a contract</strong> — to create your account and deliver letters and other core features you have asked for.</li>
+            <li><strong>Consent</strong> — for personalised advertising and, on iOS, for tracking. You can withdraw consent at any time (see Section 4).</li>
+            <li><strong>Legitimate interests</strong> — to keep the service safe and functioning: automated content screening, handling reports and blocks, preventing abuse, and diagnosing crashes.</li>
+            <li><strong>Legal obligation</strong> — where we must retain or disclose data to comply with applicable law.</li>
+        </ul>
+
+        <h2>4. Advertising, Consent, and Tracking</h2>
+        <p>We use <strong>Google AdMob</strong> to display advertisements, including rewarded video ads. AdMob may process device identifiers, coarse location derived from your IP address, and ad interaction data in order to serve and measure ads. See <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
+
+        <h3>4.1 Consent in the EEA, UK, and Switzerland</h3>
+        <p>Before ads are loaded, we present a consent form provided by Google's User Messaging Platform (UMP). You may choose personalised ads, non-personalised ads, or refuse consent for the purposes offered. You can reopen this form at any time from the app's settings and change your choice.</p>
+
+        <h3>4.2 App Tracking Transparency (iOS)</h3>
+        <div class="callout">
+            <p style="margin-bottom:0"><strong>This applies to InkedApp only.</strong> Our games do not request tracking permission and do not track you.</p>
+        </div>
+        <p>On iOS, InkedApp asks for your permission before tracking you across apps and websites owned by other companies, using Apple's App Tracking Transparency framework. If you decline, we do not track you and you will see non-personalised advertising instead; the app remains fully usable. You can change this decision at any time in <em>iOS Settings → Privacy &amp; Security → Tracking</em>.</p>
+
+        <h2>5. Diagnostics and Analytics</h2>
+        <p>We collect non-personal diagnostic data, such as crash reports and basic error logs, to identify and fix defects. This data is processed through Google Firebase and is not used to identify you or to build a profile about you.</p>
+
+        <h2>6. Automated Content Screening</h2>
+        <p>To protect users — particularly younger ones — text written in InkedApp (letters and notice-board posts) is automatically screened <strong>on your device</strong> before it is sent. The screening looks for profanity, sexual content, and attempts to exchange personal contact details such as phone numbers or social-media handles.</p>
+        <p>If a message is blocked, you are told and may edit and resend it. This screening is automated and happens locally; the content of a blocked message is not transmitted to us. It does not produce any legal or similarly significant effect for you, and it does not replace human review of reports.</p>
+
+        <h2>7. Sharing Your Information</h2>
+        <p>We do not sell your personal data. We share information only as follows:</p>
+        <ul>
+            <li><strong>With other users</strong> — your nickname, country, interests, and the letters or posts you choose to send.</li>
+            <li><strong>With service providers</strong> — Google Firebase (authentication, database) and Google AdMob (advertising), acting on our behalf.</li>
+            <li><strong>With app stores</strong> — Apple and Google process your in-app purchases. We never receive your payment card details.</li>
+            <li><strong>Where legally required</strong> — to comply with a valid legal request, or to protect the rights, safety, or property of our users or of Kutluca Labs.</li>
+        </ul>
+
+        <h2>8. International Data Transfers</h2>
+        <p>Our services run on Google Cloud infrastructure and your data may be stored and processed in countries other than your own, including the United States. Where data is transferred out of the EEA or the UK, the transfer is covered by the European Commission's Standard Contractual Clauses or another approved safeguard, as implemented by Google.</p>
+
+        <h2>9. How Long We Keep Data</h2>
+        <table>
+            <tr><th>Data</th><th>Retention</th></tr>
+            <tr>
+                <td>Account and profile</td>
+                <td>Until you delete your account. After deletion, data is removed from our active systems within 30 days.</td>
+            </tr>
+            <tr>
+                <td>Letters between real users</td>
+                <td>Kept while either correspondent still holds the letter. A letter is permanently deleted once <em>both</em> the sender and the recipient have deleted it — deleting a letter does not remove it from the other person's archive.</td>
+            </tr>
+            <tr>
+                <td>Letters from automated accounts</td>
+                <td>Automatically deleted 180 days after they are sent.</td>
+            </tr>
+            <tr>
+                <td>Notice-board posts</td>
+                <td>Automatically deleted 24 hours after posting.</td>
+            </tr>
+            <tr>
+                <td>Reports of abuse</td>
+                <td>Retained after review for as long as necessary to enforce our rules and to detect repeat offenders.</td>
+            </tr>
+            <tr>
+                <td>Backups</td>
+                <td>Residual copies may persist in encrypted backups for a limited period after deletion.</td>
+            </tr>
+        </table>
+
+        <h2>10. Automated Accounts</h2>
+        <p>To keep InkedApp usable while its community is still growing, some profiles and notice-board posts are generated automatically by us rather than written by real people. These accounts exist only to populate the app; they are not real individuals, and any correspondence with them is machine-generated. No personal data of yours is shared with a third party through them.</p>
+
+        <h2>11. Your Rights</h2>
+        <p>Depending on where you live, you may have the right to:</p>
+        <ul>
+            <li>access the personal data we hold about you, and receive a copy of it;</li>
+            <li>correct inaccurate data — your nickname, country, and interests can be edited in the app at any time;</li>
+            <li>delete your account and associated data, using the in-app account deletion feature or by contacting us;</li>
+            <li>withdraw consent to personalised advertising or tracking, at any time and without penalty;</li>
+            <li>object to or request restriction of processing based on our legitimate interests;</li>
+            <li>request portability of the data you provided to us;</li>
+            <li>lodge a complaint with your local data protection authority.</li>
+        </ul>
+        <p>To exercise any of these rights, write to <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a>. We respond within 30 days. We may ask you to verify ownership of the account before acting on a request.</p>
+        <p>Note that your date of birth cannot be changed after registration. It is used to enforce our minimum age requirement, and allowing it to be edited would defeat that purpose. If it was entered incorrectly, contact us.</p>
+
+        <h2>12. Children and Minimum Age</h2>
+        <div class="callout">
+            <p style="margin-bottom:0"><strong>InkedApp is not for children.</strong> You must be at least <strong>16 years old</strong> to create an InkedApp account.</p>
+        </div>
+        <p>We ask for your date of birth during registration and refuse registration to anyone under 16. Our games are not directed to children and do not collect personal information from anyone.</p>
+        <p>We do not knowingly collect personal information from children under 16. If you believe a child under 16 has created an account, contact us at <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a> and we will delete the account and its data promptly.</p>
+
+        <h2>13. Security</h2>
+        <p>Data is transmitted over encrypted connections and stored on Google Firebase with access restricted by server-side security rules, so that one user cannot read another user's private data. Authentication credentials are handled entirely by Google Firebase Authentication and are never stored by us. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+        <h2>14. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. The "Last Updated" date at the top of this page shows when it last changed. Where a change is material, we will give notice within the Applications before it takes effect.</p>
+
+        <h2>15. Contact</h2>
+        <p>Questions about this policy, or about your data:<br>
+           <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a><br>
+           <a href="mailto:kutluca.game@gmail.com">kutluca.game@gmail.com</a></p>
+
+        <div class="footer-legal">
+            <p>Kutluca Labs · <a href="terms.html">Terms of Service &amp; EULA</a> · <a href="delete-data.html">Delete Your Account &amp; Data</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Abdullah Kutluca | Kutluca Labs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

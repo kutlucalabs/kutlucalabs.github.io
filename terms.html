@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutluca Labs | Terms of Service & EULA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07040e;
+            --bg-card: rgba(18, 12, 34, 0.85);
+            --border-purple: rgba(139, 92, 246, 0.3);
+            --border-purple-hover: rgba(168, 85, 247, 0.7);
+            --accent-purple: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px 60px;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+        }
+
+        header {
+            width: 100%;
+            max-width: 860px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 15px;
+        }
+
+        .header-logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .studio-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 60%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.18);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: #d8b4fe;
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            margin-bottom: 10px;
+        }
+        .back-btn:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #d8b4fe;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 8px; }
+
+        a {
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #e9d5ff;
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            font-size: 0.88rem;
+        }
+        .nav-links a {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-links a:hover { background: rgba(139, 92, 246, 0.25); text-decoration: none; }
+
+        .meta {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .callout {
+            background-color: rgba(239, 68, 68, 0.14);
+            border-left: 4px solid #ef4444;
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            color: #fca5a5;
+        }
+
+        .footer-legal {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Main Studio Website
+        </a>
+        <div class="header-logo-row">
+            <img src="images/kutluca_icon_clean.jpg" class="header-logo-img" alt="Kutluca Labs Logo" onerror="this.src='images/kutlucalabs_3.png'">
+            <h1 class="studio-title">KUTLUCA LABS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Terms of Service &amp; EULA</h1>
+        
+        <div class="nav-links">
+            <a href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
+            <a href="delete-data.html" style="color: #f87171;"><i class="fas fa-trash-can"></i> Delete Your Account &amp; Data</a>
+        </div>
+
+        <div class="meta">
+            <strong>Effective Date:</strong> August 2, 2026 &nbsp;·&nbsp; <strong>Last Updated:</strong> August 2, 2026
+        </div>
+
+        <p>These Terms govern your use of the mobile applications published by Kutluca Labs ("we", "us"), including HuePanic, GLYPHIX, MagneBlock, and InkedApp (collectively, "the Applications"). By downloading or using any of the Applications, you agree to these Terms. If you do not agree, do not use the Applications.</p>
+
+        <h2>1. Eligibility and Minimum Age</h2>
+        <p>You must be at least <strong>16 years old</strong> to create an InkedApp account. By registering you confirm that you meet this requirement. We ask for your date of birth at registration and refuse accounts to anyone under 16. If we learn that an account belongs to someone under 16, we will terminate it and delete the associated data.</p>
+        <p>Our games do not require an account and are not directed to children.</p>
+
+        <h2>2. Your Account</h2>
+        <p>You are responsible for keeping your login credentials confidential and for all activity that occurs under your account. Tell us promptly if you believe your account has been compromised. You may delete your account at any time from within the app.</p>
+
+        <h2>3. Community Rules and User-Generated Content</h2>
+
+        <div class="callout">
+            <p style="margin-bottom:0"><strong>There is zero tolerance for objectionable content or abusive behaviour on InkedApp.</strong> Accounts that break the rules below are removed.</p>
+        </div>
+
+        <p>You are solely responsible for the content you write, send, or post. You agree <strong>not</strong> to:</p>
+        <ul>
+            <li>send or post content that is abusive, harassing, threatening, hateful, defamatory, obscene, or sexually explicit;</li>
+            <li>send or post any sexual content involving, depicting, or directed at minors, or attempt to solicit, groom, or arrange contact with a minor — this is an absolute prohibition and we report credible cases to the competent authorities;</li>
+            <li>solicit or share personal contact details, or attempt to move a conversation to a private channel outside the app;</li>
+            <li>share spam, promotional material, chain letters, or unsolicited advertisements;</li>
+            <li>impersonate any person or entity, or misrepresent your affiliation with one;</li>
+            <li>publish another person's private information without their consent;</li>
+            <li>promote or facilitate illegal activity, self-harm, or violence;</li>
+            <li>attempt to circumvent our safety measures, including automated content screening, blocking, or account termination.</li>
+        </ul>
+
+        <h3>3.1 How we enforce these rules</h3>
+        <p>For applications that allow communication between users, we provide the following measures:</p>
+        <ul>
+            <li><strong>Automated filtering.</strong> Text is screened before it is sent, for profanity, sexual content, and attempts to exchange personal contact details.</li>
+            <li><strong>Reporting.</strong> Every letter and notice-board post can be reported from within the app.</li>
+            <li><strong>Blocking.</strong> You can block any user. A blocked user cannot send you anything, and this is enforced on our servers, not merely hidden on your device.</li>
+            <li><strong>Action within 24 hours.</strong> We review reports of objectionable content and abusive users and act on them — by removing the content, suspending the account, or terminating it — <strong>within 24 hours</strong> of the report.</li>
+        </ul>
+        <p>We may remove content and suspend or permanently terminate any account that violates these Terms, without prior notice. Automated screening is a safeguard, not a guarantee: it can be evaded, and we do not pre-approve or endorse content written by users.</p>
+
+        <h2>4. Automated Accounts</h2>
+        <p>Some profiles and notice-board posts in InkedApp are generated automatically by us so that the app is not empty while its community grows. These are not real people, and any letters received from them are machine-generated. Do not treat them as real correspondents.</p>
+
+        <h2>5. Licence</h2>
+        <p>Subject to these Terms, we grant you a limited, personal, non-exclusive, non-transferable, revocable licence to install and use the Applications on devices you own or control, for personal, non-commercial purposes. You may not copy, modify, translate, reverse engineer, decompile, or create derivative works of the Applications, nor use our names, logos, or trademarks, except as permitted by applicable law. All intellectual property rights in the Applications remain with Kutluca Labs.</p>
+        <p>You retain ownership of the content you write. By sending or posting content you grant us a worldwide, non-exclusive, royalty-free licence to host, store, transmit, and display that content for the sole purpose of operating the Applications.</p>
+
+        <h2>6. In-App Purchases and Virtual Currency</h2>
+        <p>Some Applications offer virtual currency (for example, "Ink Drops") and other items for purchase.</p>
+        <ul>
+            <li>Virtual items and currency have <strong>no monetary value</strong>, are not your property, cannot be transferred between accounts, and cannot be exchanged for cash or anything of real value.</li>
+            <li>Purchases are processed by Apple or Google, not by us. Refunds are governed by the policies of the store you purchased from — the Apple App Store or Google Play — and by any refund rights you have under applicable consumer law. Contact the store directly for a refund request.</li>
+            <li>Unused virtual currency and unlocked items are lost when you delete your account, and we owe no compensation for them.</li>
+            <li>We may change prices, adjust the amount of currency granted by an item, or discontinue items at any time. Items you have already purchased and received are not withdrawn by such a change.</li>
+        </ul>
+
+        <h2>7. Advertising</h2>
+        <p>The Applications are supported by advertising, including optional rewarded video advertisements you may choose to watch in exchange for in-app rewards. Advertising is handled by Google AdMob. Advertisers are third parties and we are not responsible for the content of their advertisements or the products they promote. See our <a href="privacy.html">Privacy Policy</a> for how advertising data and consent are handled.</p>
+
+        <h2>8. Availability and Changes to the Service</h2>
+        <p>We may modify, suspend, or discontinue any Application or feature at any time. We may release updates that must be installed for the Application to continue functioning. If we discontinue an Application entirely, we will make reasonable efforts to give notice in advance.</p>
+
+        <h2>9. Termination</h2>
+        <p>You may stop using the Applications and delete your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if continuing to provide the service to you would create a risk to other users. Sections 5, 6, 10, 11, and 12 survive termination.</p>
+
+        <h2>10. Disclaimer of Warranties</h2>
+        <p>The Applications are provided on an "as is" and "as available" basis, without warranties of any kind, whether express or implied, including fitness for a particular purpose, merchantability, or non-infringement. We do not warrant that the Applications will be uninterrupted, timely, secure, or error-free, nor that letters will always be delivered. Nothing in these Terms excludes any warranty or right that cannot be excluded under the law that applies to you.</p>
+
+        <h2>11. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Kutluca Labs is not liable for indirect, incidental, special, consequential, or punitive damages, or for loss of data, profits, or goodwill, arising out of your use of the Applications. Our total aggregate liability arising out of or relating to the Applications is limited to the greater of (a) the amount you paid us in the twelve months before the event giving rise to the claim, or (b) EUR 50.</p>
+        <p>We are not responsible for the conduct of other users, whether online or offline. You interact with other users at your own risk. Never share your home address, financial details, or other sensitive personal information with a correspondent.</p>
+        <p>Some jurisdictions do not allow certain limitations of liability; in those places these limits apply only to the extent permitted.</p>
+
+        <h2>12. Governing Law</h2>
+        <p>These Terms are governed by the laws of [Türkiye], without regard to conflict of law rules. If you are a consumer resident in the European Economic Area or the United Kingdom, you keep the benefit of any mandatory consumer protection provisions of the law of your country of residence, and you may bring proceedings in your local courts.</p>
+
+        <h2>13. Apple-Specific Terms</h2>
+        <p>For Applications obtained from the Apple App Store, the following applies:</p>
+        <ul>
+            <li>These Terms are between you and Kutluca Labs only, not with Apple. Apple is not responsible for the Applications or their content.</li>
+            <li>Apple has no obligation to provide maintenance or support for the Applications.</li>
+            <li>If an Application fails to conform to any applicable warranty, you may notify Apple, and Apple may refund the purchase price. To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the Applications.</li>
+            <li>Apple is not responsible for addressing any claim by you or a third party relating to the Applications, including product liability, legal or regulatory non-compliance, and consumer protection claims.</li>
+            <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
+            <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
+        </ul>
+
+        <h2>14. Changes to These Terms</h2>
+        <p>We may update these Terms from time to time. The "Last Updated" date above shows when they last changed. Where a change is material, we will give notice within the Applications before it takes effect. Continuing to use the Applications after a change takes effect means you accept the revised Terms.</p>
+
+        <h2>15. Contact</h2>
+        <p>Questions about these Terms, or to report a violation:<br>
+           <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a><br>
+           <a href="mailto:kutluca.game@gmail.com">kutluca.game@gmail.com</a></p>
+
+        <div class="footer-legal">
+            <p>Kutluca Labs · <a href="privacy.html">Privacy Policy</a> · <a href="delete-data.html">Delete Your Account &amp; Data</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Abdullah Kutluca | Kutluca Labs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

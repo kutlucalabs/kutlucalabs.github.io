@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutluca Labs | Delete Account & Data</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07040e;
+            --bg-card: rgba(18, 12, 34, 0.85);
+            --border-purple: rgba(139, 92, 246, 0.3);
+            --border-purple-hover: rgba(168, 85, 247, 0.7);
+            --accent-purple: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-sub: #cbd5e1;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 15px 60px;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.22) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(168, 85, 247, 0.14) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+        }
+
+        header {
+            width: 100%;
+            max-width: 860px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 15px;
+        }
+
+        .header-logo-img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+
+        .studio-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 60%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(139, 92, 246, 0.18);
+            border: 1px solid rgba(139, 92, 246, 0.4);
+            color: #d8b4fe;
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            margin-bottom: 10px;
+        }
+        .back-btn:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-purple);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 860px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 20px 50px -10px rgba(139, 92, 246, 0.3);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.3);
+            padding-bottom: 16px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #d8b4fe;
+            margin-top: 36px;
+            margin-bottom: 14px;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        p, ul, ol {
+            color: var(--text-sub);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 8px; }
+
+        a {
+            color: #c084fc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #e9d5ff;
+            text-decoration: underline;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            font-size: 0.88rem;
+        }
+        .nav-links a {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-links a:hover { background: rgba(139, 92, 246, 0.25); text-decoration: none; }
+
+        .meta {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.88rem;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        th {
+            background-color: rgba(139, 92, 246, 0.22);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        td {
+            background-color: rgba(18, 12, 34, 0.5);
+            color: var(--text-sub);
+        }
+
+        .callout {
+            background-color: rgba(139, 92, 246, 0.14);
+            border-left: 4px solid var(--accent-purple);
+            border-radius: 0 12px 12px 0;
+            padding: 16px 20px;
+            margin: 20px 0;
+            color: #e9d5ff;
+        }
+
+        .footer-legal {
+            margin-top: 45px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(139, 92, 246, 0.3);
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Main Studio Website
+        </a>
+        <div class="header-logo-row">
+            <img src="images/kutluca_icon_clean.jpg" class="header-logo-img" alt="Kutluca Labs Logo" onerror="this.src='images/kutlucalabs_3.png'">
+            <h1 class="studio-title">KUTLUCA LABS</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 style="color: #f87171;"><i class="fas fa-user-minus" style="font-size: 1.6rem; margin-right: 10px;"></i>Delete Your Account and Data</h1>
+
+        <div class="nav-links">
+            <a href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
+            <a href="terms.html"><i class="fas fa-file-contract"></i> Terms of Service &amp; EULA</a>
+        </div>
+
+        <div class="meta">
+            InkedApp (com.kutluca.inkedapp) · Last updated: 7 August 2026
+        </div>
+
+        <p>You can delete your InkedApp account and all associated data at any time. There are two ways to do it, and you do not need the app installed to make a request.</p>
+
+        <h2>Option 1 — Delete from inside the app</h2>
+        <ol>
+            <li>Open <strong>InkedApp</strong> and go to your desk.</li>
+            <li>Tap the <strong>Settings</strong> icon.</li>
+            <li>Scroll to the bottom and tap <strong>Delete My Data and Account</strong>.</li>
+            <li>Confirm. Your account is deactivated immediately.</li>
+        </ol>
+
+        <h2>Option 2 — Request deletion by email</h2>
+        <p>If you can no longer open the app, email <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a> from the address registered to your account, with the subject <strong>&ldquo;Delete my InkedApp account&rdquo;</strong>. Include your Passport ID (for example <code>UN-AR-584954-33</code>) if you know it. We will confirm within 7 days and then follow the same timeline described below.</p>
+
+        <h2>What happens, and when</h2>
+        <table>
+            <tr><th style="width:28%">When</th><th>What happens</th></tr>
+            <tr>
+                <td><strong>Immediately</strong></td>
+                <td>Your account is deactivated. Your profile stops appearing on the compass, nobody can find you or write to you, and you are signed out.</td>
+            </tr>
+            <tr>
+                <td><strong>Within 30 days</strong></td>
+                <td>You can change your mind. Sign in again with your email and password and your account is restored exactly as you left it, with all of your letters.</td>
+            </tr>
+            <tr>
+                <td><strong>After 30 days</strong></td>
+                <td>Everything listed below is permanently deleted by an automated process. This cannot be undone.</td>
+            </tr>
+        </table>
+
+        <div class="callout">
+            <strong>If you never added an email address to your account</strong>, it cannot be restored once you confirm deletion &mdash; signing back in requires an email and password. Please be sure before you confirm.
+        </div>
+
+        <h2>What is deleted</h2>
+        <ul>
+            <li>Your profile: display name, Passport ID, biography, country, region and interests</li>
+            <li>Your email address and date of birth</li>
+            <li>Every letter you have sent and received, including drafts and letters in transit</li>
+            <li>Your notice-board post</li>
+            <li>Your blocked-users list</li>
+            <li>Your Ink Drop balance and your unlocked paper, ink and envelope collection</li>
+            <li>Your sign-in credentials (the authentication record itself)</li>
+        </ul>
+
+        <div class="callout">
+            <strong>A note about your correspondents.</strong> Deleting your account removes your letters from your pen pals&rsquo; archives as well, because a letter cannot exist with no one on one end of it. This is different from deleting a single letter inside the app, which only removes it from your own archive.
+        </div>
+
+        <h2>What is kept, and why</h2>
+        <table>
+            <tr><th style="width:32%">Data</th><th>Reason</th></tr>
+            <tr>
+                <td>Reports of abuse filed by you or about you</td>
+                <td>Retained after review for as long as necessary to enforce our rules and to detect repeat offenders. If these were erased on request, a user who broke the rules could clear their history simply by deleting their account.</td>
+            </tr>
+            <tr>
+                <td>Purchase and transaction records</td>
+                <td>Held by Google Play and the Apple App Store for tax and accounting purposes. These are outside our control &mdash; please contact the store directly.</td>
+            </tr>
+            <tr>
+                <td>Encrypted backups</td>
+                <td>Residual copies may persist in encrypted backups for a limited period after deletion, and are overwritten in the normal backup cycle.</td>
+            </tr>
+        </table>
+
+        <p>We do not sell your data, and we do not keep a usable copy of a deleted account. For the full picture, see our <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h2>Questions</h2>
+        <p>Write to:<br>
+           <a href="mailto:kutlucalabs@icloud.com">kutlucalabs@icloud.com</a><br>
+           <a href="mailto:kutluca.game@gmail.com">kutluca.game@gmail.com</a><br>
+           and we will help.</p>
+
+        <div class="footer-legal">
+            <p>Kutluca Labs · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service &amp; EULA</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Abdullah Kutluca | Kutluca Labs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
